@@ -3,10 +3,10 @@ package com.example.microservice_project.entity;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -25,4 +25,6 @@ public class User {
     @Column(name = "ABOUT")
     private String about;
 
+    @Transient
+    private List<Rating> ratingList=new ArrayList<>();
 }
